@@ -1,7 +1,74 @@
-body{
-    background-color: black;
-    
+* {
+  box-sizing: border-box;
 }
-h1 {
-    color: white;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.to-do-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid rgb(190, 180, 180);
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
+  width: 40%;
+  min-height: 100px;
+}
+
+.holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px;
+}
+
+.add-form {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+}
+
+.add-form input {
+  font-style: italic;
+  width: 100%;
+  border: none;
+}
+
+.add-form input:focus {
+  outline: none;
+  font-style: normal;
+}
+
+.line {
+  width: 100%;
+  border-top: solid 1px  rgb(221, 207, 207);
+}
+
+.complete {
+  width: 100%;
+  background-color: rgb(221, 207, 207);
+  border: none;
+  height: 50px;
+}
+
+.todo-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 12px;
+}
+
+.checkbox-description-container {
+  display: flex;
+}
+
+.checkbox-description-container p {
+  margin-left: 5px;
 }
