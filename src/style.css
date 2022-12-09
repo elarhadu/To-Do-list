@@ -9,13 +9,16 @@ body {
   min-height: 100vh;
 }
 
+ul li {
+  list-style: none;
+}
+
 .to-do-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   border: 1px solid rgb(190, 180, 180);
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0 50px 100px -20px,
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
   width: 40%;
@@ -46,9 +49,21 @@ body {
   font-style: normal;
 }
 
+.submit-button {
+  outline: none;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
 .line {
   width: 100%;
-  border-top: solid 1px  rgb(221, 207, 207);
+  border-top: solid 1px rgb(221, 207, 207);
+}
+
+.user-task{
+  border: none;
+  outline: none;
 }
 
 .complete {
@@ -71,4 +86,39 @@ body {
 
 .checkbox-description-container p {
   margin-left: 5px;
+}
+
+.edit-remove i {
+  position: relative;
+}
+.edit-remove ul {
+  background-color: white;
+    cursor: pointer;
+    box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+    padding: 4px 0;
+    z-index: 6;
+    margin-left: -100px;
+    margin-top: -30px;
+    position: absolute;
+    transform: scale(0);
+    transform-origin: top right;
+    transition:  0.3s ease-in all;
+}
+
+.edit-remove:hover ul {
+  transform: scale(1);
+}
+
+.edit-remove li {
+  padding: 5px 16px;
+  display: flex;
+  justify-content: baseline;
+}
+
+.edit-remove li:hover {
+  background-color: rgb(159, 156, 156);
+}
+
+.edit-remove ul li span{
+  padding-right: 4px;
 }
