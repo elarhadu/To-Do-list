@@ -1,5 +1,7 @@
-import 'lodash';
+/* eslint-disable no-unused-vars */
 import { remove } from 'lodash';
+import clearAll from './modules/clearAll.js';
+import handleStatusUpdate from './modules/statusUpdate.js';
 import './style.css';
 
 const inputField = document.querySelector('.add-form input');
@@ -92,22 +94,13 @@ editTasks.forEach((task, index) => {
 const status = document.querySelectorAll('.completeStatus');
 status.forEach((check, index) => {
   check.addEventListener('change', (e) => {
-    const isChecked = e.target.toggleAttribute('checked');
-    taskLists = JSON.parse(localStorage.getItem('duties'));
-    taskLists[index].completed = isChecked;
-    localStorage.setItem('duties', JSON.stringify(taskLists));
-    window.location.reload();
+    handleStatusUpdate(e, index);
   });
 });
 
 const clearAllBtn = document.querySelector('.complete');
 
 clearAllBtn.addEventListener('click', (e) => {
-  taskLists = JSON.parse(localStorage.getItem('duties'));
-  const updatedLists = taskLists.filter((task) => !task.completed);
-  updatedLists.forEach((task, i) => {
-    task.index = i + 1;
-  });
-  localStorage.setItem('duties', JSON.stringify(updatedLists));
+  clearAll(e);
   window.location.reload();
 });
