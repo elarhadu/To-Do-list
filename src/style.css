@@ -57,6 +57,7 @@ ul li {
 
 input[type=checkbox]:checked + input {
   text-decoration: line-through;
+  color: red;
 }
 
 .description:read-only {
