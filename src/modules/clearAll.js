@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-const clearAll = (e) => {
+const clearAll = () => {
   const taskLists = JSON.parse(localStorage.getItem('duties'));
   const updatedLists = taskLists.filter((task) => !task.completed);
   updatedLists.forEach((task, i) => {

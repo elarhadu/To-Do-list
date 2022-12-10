@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-import { remove } from 'lodash';
 import clearAll from './modules/clearAll.js';
 import handleStatusUpdate from './modules/statusUpdate.js';
 import './style.css';
