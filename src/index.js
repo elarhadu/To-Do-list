@@ -75,6 +75,7 @@ editTasks.forEach((task, index) => {
     taskLists = JSON.parse(localStorage.getItem('duties'));
     taskLists[index].description = updatedTask;
     localStorage.setItem('duties', JSON.stringify(taskLists));
+    window.location.reload();
   });
 });
 editTasks.forEach((task, index) => {
@@ -84,11 +85,11 @@ editTasks.forEach((task, index) => {
       taskLists = JSON.parse(localStorage.getItem('duties'));
       taskLists[index].description = updatedTask;
       localStorage.setItem('duties', JSON.stringify(taskLists));
+      window.location.reload();
     }
   });
 });
 
-// Updating the checkbox
 const status = document.querySelectorAll('.completeStatus');
 status.forEach((check, index) => {
   check.addEventListener('change', (e) => {
