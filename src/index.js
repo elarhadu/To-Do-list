@@ -1,4 +1,5 @@
 import 'lodash';
+import { remove } from 'lodash';
 import './style.css';
 
 const inputField = document.querySelector('.add-form input');
@@ -11,7 +12,7 @@ const tasksTodo = (todo) => {
   displayTasks.innerHTML += `
      <div class = "todo-list" id = ${todo.index}>
      <div class = "checkbox-description-container">
-          <input type='checkbox' onclick='completedTask(${todo.completed})' >
+          <input type='checkbox' class="completeStatus" ${todo.completed ? 'checked' : ''} >
           <input value= "${todo.description}" type= "text" class="user-task"/>
      </div>
      <div class= "edit-remove" >
@@ -84,4 +85,27 @@ editTasks.forEach((task, index) => {
       localStorage.setItem('duties', JSON.stringify(taskLists));
     }
   });
+});
+
+// Updating the checkbox
+const status = document.querySelectorAll('.completeStatus');
+status.forEach((check, index) => {
+  check.addEventListener('change', (e) => {
+    const isChecked = e.target.toggleAttribute('checked');
+    taskLists = JSON.parse(localStorage.getItem('duties'));
+    taskLists[index].completed = isChecked;
+    localStorage.setItem('duties', JSON.stringify(taskLists));
+  });
+});
+
+const clearAllBtn = document.querySelector('.complete');
+
+clearAllBtn.addEventListener('click', (e) => {
+  taskLists = JSON.parse(localStorage.getItem('duties'));
+  const updatedLists = taskLists.filter((task) => !task.completed);
+  updatedLists.forEach((task, i) => {
+    task.index = i + 1;
+  });
+  localStorage.setItem('duties', JSON.stringify(updatedLists));
+  window.location.reload();
 });
