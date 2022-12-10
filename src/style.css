@@ -9,6 +9,10 @@ body {
   min-height: 100vh;
 }
 
+ul li {
+  list-style: none;
+}
+
 .to-do-container {
   display: flex;
   justify-content: center;
@@ -41,14 +45,31 @@ body {
   border: none;
 }
 
+.checkbox-description-container input {
+  margin-left: 5px;
+  font-size: 16px;
+}
+
 .add-form input:focus {
   outline: none;
   font-style: normal;
 }
 
+.submit-button {
+  outline: none;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
 .line {
   width: 100%;
-  border-top: solid 1px  rgb(221, 207, 207);
+  border-top: solid 1px rgb(221, 207, 207);
+}
+
+.user-task {
+  border: none;
+  outline: none;
 }
 
 .complete {
@@ -69,6 +90,6 @@ body {
   display: flex;
 }
 
-.checkbox-description-container p {
-  margin-left: 5px;
+.material-symbols-outlined {
+  cursor: pointer;
 }
