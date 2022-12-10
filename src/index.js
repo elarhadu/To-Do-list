@@ -4,28 +4,22 @@ import "./style.css";
 const inputField = document.querySelector(".add-form input");
 let taskLists = [];
 const todoLists = document.querySelector(".tasks-list");
-let editIndex;
-let editedTodo = false;
-
+const clearAll = document.querySelector(".complete");
 
 const tasksTodo = (todo) => {
   const displayTasks = document.createElement("div");
-
+  displayTasks.innerHTML=''
   displayTasks.innerHTML += `
-     <div class = "todo-list" id = ${todo.index} complete= ${todo.completed}>
+     <div class = "todo-list" id = ${todo.index}>
      <div class = "checkbox-description-container">
           <input type='checkbox' onclick='completedTask(${todo.completed})' >
-          <input type='text' value=${todo.description} class="user-task" readonly>
+          <input value= "${todo.description}" type= "text" class="user-task"/>
      </div>
      <div class= "edit-remove" >
-       <i class="fa-solid fa-ellipsis-vertical" ></i>
        <ul>
-       <li class="edit" onclick="editTask(${todo.index}, ${todo.description})"><span class="material-symbols-outlined">
-       edit
-       </span>Edit</li>
        <li onclick="removeTask(${todo.index})"><span class="material-symbols-outlined">
        delete
-       </span>Remove</li>
+       </span></li>
        </ul>
        </div>
        </div>
@@ -46,7 +40,7 @@ inputField.addEventListener("keypress", (e) => {
     let assignment = {
       description: todoLists,
       completed: false,
-      index: taskLists.length,
+      index: taskLists.length + 1,
     };
     e.target.value = "";
     taskLists.push(assignment);
@@ -61,6 +55,9 @@ window.removeTask = (index) => {
   const newTodo = deleteTask.filter((task) => {
     return task.index !== index;
   });
+  newTodo.forEach((task, i) => {
+    task.index=i+1
+  });
   localStorage.setItem("duties", JSON.stringify(newTodo));
   taskId.remove();
 };
@@ -72,8 +69,3 @@ if (localStorage.getItem("duties")) {
   });
 }
 
-// Edit a task
-window.editTask = (index, description) => {
-  editIndex=index;
-  inputField.value = description;
-}

@@ -61,6 +61,7 @@ ul li {
   border-top: solid 1px rgb(221, 207, 207);
 }
 
+
 .user-task{
   border: none;
   outline: none;
@@ -84,14 +85,19 @@ ul li {
   display: flex;
 }
 
-.checkbox-description-container p {
+.checkbox-description-container input {
   margin-left: 5px;
+  font-size: 16px;
 }
 
-.edit-remove i {
-  position: relative;
+.material-symbols-outlined{
+  cursor: pointer;
 }
-.edit-remove ul {
+
+/* .edit-remove i {
+  position: relative;
+} */
+/* .edit-remove ul {
   background-color: white;
     cursor: pointer;
     box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
@@ -103,13 +109,13 @@ ul li {
     transform: scale(0);
     transform-origin: top right;
     transition:  0.3s ease-in all;
-}
+} */
 
-.edit-remove:hover ul {
+/* .edit-remove:hover ul {
   transform: scale(1);
-}
+} */
 
-.edit-remove li {
+/* .edit-remove li {
   padding: 5px 16px;
   display: flex;
   justify-content: baseline;
@@ -121,4 +127,4 @@ ul li {
 
 .edit-remove ul li span{
   padding-right: 4px;
-}
+} */
