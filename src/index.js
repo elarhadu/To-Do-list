@@ -13,7 +13,8 @@ const tasksTodo = (todo) => {
      <div class = "todo-list" id = ${todo.index}>
      <div class = "checkbox-description-container">
           <input type='checkbox' class="completeStatus" ${todo.completed ? 'checked' : ''} >
-          <input value= "${todo.description}" type= "text" class="user-task"/>
+          <input value= "${todo.description}" type= "text" class="user-task" ${todo.completed ? 'readonly="true"' : ''}
+          />
      </div>
      <div class= "edit-remove" >
        <ul>
@@ -95,6 +96,7 @@ status.forEach((check, index) => {
     taskLists = JSON.parse(localStorage.getItem('duties'));
     taskLists[index].completed = isChecked;
     localStorage.setItem('duties', JSON.stringify(taskLists));
+    window.location.reload();
   });
 });
 

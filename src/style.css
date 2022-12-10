@@ -50,6 +50,16 @@ ul li {
   font-size: 16px;
 }
 
+input[type=checkbox]:checked + input {
+  text-decoration: line-through;
+}
+
+.description:read-only {
+  text-decoration: line-through;
+  font-style: italic !important;
+}
+
+
 .add-form input:focus {
   outline: none;
   font-style: normal;
