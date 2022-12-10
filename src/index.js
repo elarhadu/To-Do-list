@@ -69,3 +69,22 @@ if (localStorage.getItem("duties")) {
   });
 }
 
+const editTasks = document.querySelectorAll(".user-task");
+editTasks.forEach((task, index) => {
+  task.addEventListener("change", (e) => {
+    const updatedTask = e.target.value;
+    taskLists = JSON.parse(localStorage.getItem("duties"));
+    taskLists[index].description = updatedTask;
+    localStorage.setItem("duties", JSON.stringify(taskLists));
+  });
+});
+editTasks.forEach((task, index) => {
+  task.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      const updatedTask = e.target.value;
+      taskLists = JSON.parse(localStorage.getItem("duties"));
+      taskLists[index].description = updatedTask;
+      localStorage.setItem("duties", JSON.stringify(taskLists));
+    }
+  });
+});
