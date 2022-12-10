@@ -69,15 +69,21 @@ In this project, I built a simple HTML list of To Do tasks. This simple web page
 
 ### Key Features <a name="key-features"></a>
 
-- The index.html file was set as a template using the HTML Webpack Plugin.
-- An array of some simple to do tasks (array of objects). Each task object should contain three keys:
-  -description [string].
-  -completed [bool].
-  -index: [number].
-- A function that iterate over the tasks array and populate an HTML list item element for each task.
-- CSS is be loaded by Webpack Style/CSS Loader.
+- Added event listener to the checkbox (change).
+- Updated items object's value for completed key upon user actions.
+- Implemented a function for the "Clear all completed" button.
+- Stored the updated array of items in local storage, so the user gets the correct list values after the page reloads.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 To-Do List App <a name="live-demo"></a>
+
+[To-Do List App](https://elarhadu.github.io/To-Do-list/dist/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- GETTING STARTED -->
 
